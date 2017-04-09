@@ -1,1 +1,1 @@
-"# gradle_optimization_astudio" 
+"# gradle optimization script for android studio" 
