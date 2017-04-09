@@ -26,7 +26,7 @@ rootProject {
 		
 		tag 'DK-Win10-Server'
 
-		buildFinished { BuildResult result ->
+		buildFinished { com.gradle.scan.plugin.BuildResult result ->
 			
 			if (result.failure) {
 				value 'Failed with', result.failure.message
@@ -34,6 +34,8 @@ rootProject {
 			
 			value 'Disk usage (output dir)', buildDir.directorySize()
 		}
+		
+		
 	
 		publishAlways()
 	}
