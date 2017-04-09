@@ -1,0 +1,42 @@
+initscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2' }
+    }
+
+    dependencies {
+        classpath 'com.gradle:build-scan-plugin:1.6'
+    }
+}
+
+rootProject {
+    apply plugin: com.gradle.scan.plugin.BuildScanPlugin
+	
+	buildScan {
+
+		licenseAgreementUrl = 'https://gradle.com/terms-of-service'
+    	licenseAgree = 'yes'
+
+		if (System.getenv('CI')) {
+			tag 'CI'
+		} else {
+			tag 'Local'
+		}
+
+		tag System.getProperty('os.name')
+		
+		tag 'DK-Win10-Server'
+
+		buildFinished { BuildResult result ->
+			
+			if (result.failure) {
+				value 'Failed with', result.failure.message
+			}
+			
+			value 'Disk usage (output dir)', buildDir.directorySize()
+		}
+	
+		publishAlways()
+	}
+
+}
+
