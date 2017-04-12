@@ -24,19 +24,20 @@ rootProject {
 
 		tag System.getProperty('os.name')
 		
-		tag 'DK-Win10-Server'
-
+		tag InetAddress.getLocalHost().getHostName()
+		
+		tag Inet4Address.getLocalHost().getHostAddress()
+		
 		buildFinished { com.gradle.scan.plugin.BuildResult result ->
+		
+			//value 'Disk usage (output dir)', buildDir.directorySize()
 			
 			if (result.failure) {
 				value 'Failed with', result.failure.message
 			}
-			
-			value 'Disk usage (output dir)', buildDir.directorySize()
+		
 		}
 		
-		
-	
 		publishAlways()
 	}
 
