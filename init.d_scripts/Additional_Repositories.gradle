@@ -1,0 +1,10 @@
+/*allprojects {
+	buildscript {
+        repositories {
+			logger.info('Applying Android Studio Gradle Plugin Preview & Local Maven Repositories')
+			maven { url 'https://maven.google.com' }
+			mavenLocal()
+		}
+    }
+}*/
+

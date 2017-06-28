@@ -1,0 +1,32 @@
+/*addListener(new TaskExecutionListener() {
+	void beforeExecute(Task task) { }
+	void afterExecute(Task task, TaskState state) {
+		if (task instanceof Test && state.failure) {
+			def reportIndex = new File(task.testReportDir,'index.html')
+			if (reportIndex.exists()) {
+				//println(System.getProperty('os.name'))
+				// Windows
+				def proc = "cmd /c \"start ${reportIndex.toURI()}\"".execute()
+				// Linux (Ubuntu)
+				//def proc = "xdg-open ${reportIndex.toURI()}".execute()
+				// OS X
+				//def proc = "open ${reportIndex.toURI()}".execute()
+				proc.waitForProcessOutput()
+				assert proc.exitValue() == 0
+			}
+		}
+	}
+})
+	
+allprojects {
+	tasks.withType(Test) {
+		testLogging {
+			events 'passed', 'skipped', 'failed'
+			exceptionFormat 'full'
+			info {
+				displayGranularity = 0
+			}
+		}
+	}
+}*/
+

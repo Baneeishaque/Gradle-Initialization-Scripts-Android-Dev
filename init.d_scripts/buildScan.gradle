@@ -1,0 +1,45 @@
+/*initscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2' }
+    }
+	
+    dependencies {
+        classpath 'com.gradle:build-scan-plugin:1.8'
+    }
+}
+
+rootProject {
+	
+	logger.info('Applying Gradle buildScan plugin')
+    apply plugin: com.gradle.scan.plugin.BuildScanPlugin
+	
+	buildScan {
+
+		licenseAgreementUrl = 'https://gradle.com/terms-of-service'
+    	licenseAgree = 'yes'
+
+		if (System.getenv('CI')) {
+			tag 'CI'
+		} else {
+			tag 'Local'
+		}
+
+		tag System.getProperty('os.name')
+		
+		tag InetAddress.getLocalHost().getHostName()
+		
+		tag Inet4Address.getLocalHost().getHostAddress()
+		
+		buildFinished { com.gradle.scan.plugin.BuildResult result ->
+		
+			value 'Disk usage (output dir)', project.buildDir.directorySize()
+			
+			if (result.failure) {
+				value 'Failed with', result.failure.message
+			}
+		
+		}
+		
+		publishAlways()
+	}
+}*/

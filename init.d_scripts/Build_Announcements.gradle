@@ -1,0 +1,72 @@
+/*initscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath group: 'fr.jcgay', name: 'gradle-notifier', version: '1.1.0'
+    }
+}
+
+rootProject {
+    apply plugin: fr.jcgay.gradle.notifier.GradleNotifierPlugin
+	notifier {
+		implementation = 'notify'
+		//implementation = 'notificationcenter'
+		continuousNotify = false
+		threshold {
+			time = 10
+			unit = java.util.concurrent.TimeUnit.SECONDS
+		}
+		growl {
+			port = 23053
+			host = 'localhost'
+			password = 'azerty123'
+		}
+		snarl {
+			host = 'localhost'
+			port = 9887
+			appPassword = 's3cr3t'
+		}
+		pushbullet {
+			apikey = 'key123'
+			device = 'abcdef'
+		}
+		notifysend {
+			timeout = 7
+			path = 'notify-send'
+		}
+		notificationcenter {
+			path = 'terminal-notifier'
+			activate = 'com.apple.Terminal'
+			sound = 'default'
+		}
+		systemtray {
+			wait = 2
+		}
+		notifu {
+			path = 'notifu64'
+		}
+		kdialog {
+			path = 'kdialog'
+		}
+		anybar {
+			host = 'localhost'
+			port = 1738
+		}
+		toaster {
+			path = 'toast'
+		}
+		notify {
+			position = 'TOP_LEFT'
+			darkstyle = true
+		}
+		burnttoast {
+			sound = 'Reminder'
+		}
+		slack {
+			token = 'secret.token'
+			channel = '@jcgay'
+		}
+	}	
+}*/
