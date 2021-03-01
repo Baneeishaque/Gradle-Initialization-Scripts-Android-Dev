@@ -1,1 +1,1 @@
-"# gradle optimization script for android studio" 
+# Gradle Initialization Scripts for Android Developments
